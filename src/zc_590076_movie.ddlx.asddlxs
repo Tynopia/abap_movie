@@ -1,0 +1,115 @@
+@Metadata.layer: #CUSTOMER
+@UI.headerInfo: {
+  typeNamePlural: 'Movies',
+  typeName: 'Movie',
+  title.value: 'Title',
+  description.value: 'PublishingYear',
+  imageUrl: 'ImageUrl'
+}
+annotate view ZC_590076_Movie with
+{
+  /*Facets */
+  @UI.facet: [
+    {
+      position: 10,
+      type: #FIELDGROUP_REFERENCE,
+      targetQualifier: 'AdminData',
+      label: 'Administrative Data'
+    },
+    {
+      position: 20,
+      type: #FIELDGROUP_REFERENCE,
+      targetQualifier: 'MovieDetails',
+      label: 'Travel Details'
+    },
+    {
+      position: 30,
+      type: #LINEITEM_REFERENCE,
+      targetElement: '_Ratings',
+      label: 'Bookings'
+    }
+  ]
+
+  /* Fields */
+  
+  @UI.fieldGroup: [{
+    position: 10,
+    qualifier: 'AdminData'
+  }]
+  MovieUuid;
+
+  @UI.lineItem: [{
+    position: 10
+  }]
+  @UI.fieldGroup: [{
+    position: 10,
+    qualifier: 'MovieDetails'
+  }]
+  Title;
+
+  @UI.lineItem: [{
+    position: 20
+  }]
+  @UI.selectionField: [{
+    position: 10
+  }]
+  @UI.fieldGroup: [{
+    position: 20,
+    qualifier: 'MovieDetails'
+  }]
+  Genre;
+
+  @UI.lineItem: [{
+    position: 30
+  }]
+  @UI.selectionField: [{
+    position: 20
+  }]
+  @UI.fieldGroup: [{
+    position: 30,
+    qualifier: 'MovieDetails'
+  }]
+  PublishingYear;
+
+  @UI.lineItem: [{
+    position: 40
+  }]
+  @UI.selectionField: [{
+    position: 30
+  }]
+  @UI.fieldGroup: [{
+    position: 40,
+    qualifier: 'MovieDetails'
+  }]
+  RuntimeInMin;
+  
+  @UI.fieldGroup: [{
+    position: 50,
+    qualifier: 'MovieDetails'
+  }]
+  ImageUrl;
+  
+  @UI.fieldGroup: [{
+    position: 20,
+    qualifier: 'AdminData'
+  }]
+  CreatedAt;
+  
+  @UI.fieldGroup: [{
+    position: 30,
+    qualifier: 'AdminData'
+  }]
+  CreatedBy;
+  
+  @UI.fieldGroup: [{
+    position: 40,
+    qualifier: 'AdminData'
+  }]
+  LastChangedAt;
+  
+  @UI.fieldGroup: [{
+    position: 50,
+    qualifier: 'AdminData'
+  }]
+  LastChangedBy;
+}
